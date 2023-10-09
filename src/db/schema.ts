@@ -16,7 +16,7 @@ export const products = pgTable('products',{
 export const orders = pgTable('orders',{
     id: serial('id').primaryKey(),
     customer_email: varchar('customer_email', {length: 100}).notNull(),
-    total: doublePrecision('total').notNull(),
+    total: doublePrecision('total').default(0),
 });
 
 export const order_items = pgTable('order_items',{
